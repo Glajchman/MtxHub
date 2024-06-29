@@ -15,9 +15,9 @@ const videos = [
         description: 'ela que subi ela vai desze ela vai zenta pu imbape.'
     },
     {
-        id: '3JZ_D3ELwOQ',
-        title: 'Charlie Puth - Attention',
-        description: 'The official video of "Attention" by Charlie Puth.'
+        id: 'mp4GKmmjjtU',
+        title: ' VÍDEOS + ENGRAÇADOS DE 2021 🤣 TOP Tente Não Rir',
+        description: '.'
     },
     // Adicione mais vídeos conforme necessário
     {
@@ -93,3 +93,27 @@ function loadVideos() {
 document.addEventListener('DOMContentLoaded', () => {
     loadVideos();
 });
+function createNewsItem(news) {
+    const newsItem = document.createElement('div');
+    newsItem.className = 'news-item';
+
+    const img = document.createElement('img');
+    img.src = news.image;
+    img.alt = news.title;
+    img.style.width = '100%';
+    img.style.borderRadius = '8px';
+    img.style.marginBottom = '10px';
+
+    const title = document.createElement('h3');
+    title.className = 'news-title';
+    const newsLink = document.createElement('a');
+    newsLink.textContent = news.title;
+    newsLink.href = news.link;
+    newsLink.target = '_blank';
+    title.appendChild(newsLink);
+
+    newsItem.appendChild(img);
+    newsItem.appendChild(title);
+
+    return newsItem;
+}
